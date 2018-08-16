@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cgpa Calculator</title>
+</head>
+<style>
+	body{
+		background-color: aqua;
+	}
+</style>
+<body>
+    <script>
+    const courseUnits = [];
+    courseUnits.length =  Number(prompt("The total no. of courses you offered is?: "));
+    const courseGrade = [];
+    courseGrade.length = courseUnits.length;
+    let totalUnits = 0;
+for (let i = 0; i < courseUnits.length; i++) {
+	courseUnits[i] = Number(prompt("Enter the units" + [i+1] +" "));
+	totalUnits+=courseUnits[i];
+};
+cg =0;
+for (let i = 0; i < courseGrade.length; i++) {
+	courseGrade[i] = String(prompt("Please note, input involves just A-F, MAke sure you input in accordance of the unit;"+[i+1])).toUpperCase();
+};
+for (let index = 0; index < courseGrade.length; index++) {
+	if (courseGrade[index] == "A"){courseGrade[index] = 5;}
+	else if (courseGrade[index] == "B") {courseGrade[index] = 4;}
+	else if (courseGrade[index] == "C") {courseGrade[index] = 3;}	
+	else if (courseGrade[index] == "D") {courseGrade[index] = 2;}	
+	else if (courseGrade[index] == "E") {courseGrade[index] = 1;}
+	else if (courseGrade[index] == "F") {courseGrade[index] = 0;}	
+	else {alert("Name must be filled out");}
+	}
+let sum = 0;
+for (let j = 0; j < courseUnits.length; j++) {
+	sum += courseUnits[j] * courseGrade[j];
+};
+ let answer = sum / totalUnits;
+ document.write(`Your Cummulative Grade Point is: ${answer}`);
+    </script>
+</body>
+</html>
